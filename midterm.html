@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Midterms</title>
+<title>Midterms — Practice Task</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -12,7 +12,7 @@
 <div class="blob1"></div>
 <div class="blob2"></div>
 
-<!-- NAV — matches portfolio.html exactly -->
+<!-- NAV -->
 <nav>
   <div class="nav-logo">shey</div>
   <ul class="nav-links">
@@ -26,11 +26,11 @@
 <!-- HERO -->
 <div class="projects-hero">
   <div class="page-tabs">
-    <a href="midterm.html" class="page-tab active">📚 Midterm</a>
-    <a href="final.html" class="page-tab">🎓 Final</a>
+    <a href="midterm.html" class="page-tab active">Practice Task</a>
+    <a href="midterm2.html" class="page-tab">Project Task</a>
   </div>
-  <div class="projects-hero-tag">Academic Work</div>
-  <h1>Midterm <span style="background:linear-gradient(135deg,var(--accent),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Projects</span></h1>
+  <div class="projects-hero-tag">MIDTERMS</div>
+  <h1>Practice <span style="background:linear-gradient(135deg,var(--accent),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Tasks</span></h1>
   <p>Tasks and activities completed for the midterm, exploring data analysis and visualization with Excel and MySQL.</p>
   <div class="filter-bar">
     <button class="filter-btn active" data-filter="all">All</button>
@@ -46,36 +46,46 @@
 <section class="projects-page-section">
   <div class="projects-page-grid" id="projectsGrid">
 
-    <!-- CARD 1 -->
-    <div class="pcard" data-category="excel viz">
-      <div class="pcard-img">
-        <span class="pcard-badge">Midterm</span>
-        <div class="banner-visual banner-bars">
-          <div class="bbar"></div><div class="bbar"></div><div class="bbar"></div>
-          <div class="bbar"></div><div class="bbar"></div><div class="bbar"></div>
-          <div class="bbar"></div><div class="bbar"></div>
-        </div>
-      </div>
-      <div class="pcard-body">
-        <div class="pcard-number">Paired Task 1</div>
-        <div class="pcard-title">Asking the Right Questions</div>
-        <p class="pcard-desc">Description</p>
-        <div class="pcard-tags">
-          <span class="tag">Presentation</span>
-          <span class="tag">Data Analysis</span>
-          <span class="tag">Visualization</span>
-        </div>
-        <div class="pcard-footer">
-          <button class="btn-view" onclick="openModal('modal1')">View Details</button>
-          <a class="icon-btn" title="GitHub" href="#">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-          </a>
-          <a class="icon-btn" title="Live" href="#">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
+        <!-- CARD 1 -->
+        <div class="pcard" data-category="mysql">
+            <div class="pcard-img">
+              <span class="pcard-badge">Midterm</span>
+              <div class="banner-line">
+                <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                  <defs>
+                    <linearGradient id="lg1" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#b06aff" stop-opacity="0.35"/>
+                      <stop offset="100%" stop-color="#b06aff" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M0 80 L25 65 L50 72 L75 45 L100 50 L125 30 L150 38 L175 20 L200 25 L200 100 L0 100 Z" fill="url(#lg1)"/>
+                  <polyline points="0,80 25,65 50,72 75,45 100,50 125,30 150,38 175,20 200,25" fill="none" stroke="#b06aff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="75" cy="45" r="4" fill="#e879f9"/>
+                  <circle cx="125" cy="30" r="4" fill="#e879f9"/>
+                  <circle cx="175" cy="20" r="4" fill="#e879f9"/>
+                </svg>
+              </div>
+            </div>
+            <div class="pcard-body">
+              <div class="pcard-number">Paired Task 1</div>
+              <div class="pcard-title">Asking the Right Questions</div>
+              <p class="pcard-desc">.</p>
+              <div class="pcard-tags">
+                <span class="tag">Presentation</span>
+                <span class="tag">Data Analysis</span>
+                <span class="tag">Visualization</span>
+              </div>
+              <div class="pcard-footer">
+                <button class="btn-view" onclick="openModal('modal1')">View Details</button>
+                <a class="icon-btn" title="GitHub" href="#">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+                <a class="icon-btn" title="Live" href="#">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
 
     <!-- CARD 2 -->
     <div class="pcard" data-category="mysql">
@@ -100,7 +110,7 @@
       <div class="pcard-body">
         <div class="pcard-number">Practice Task 1</div>
         <div class="pcard-title">Demo File for Data Preparation and Cleaning</div>
-        <p class="pcard-desc">Structured database queries and operations using MySQL to manage and retrieve data efficiently.</p>
+        <p class="pcard-desc">Cleaned and prepared a raw dataset by handling missing values, errors, and formatting issues. This task built foundational skills in making messy data analysis-ready.</p>
         <div class="pcard-tags">
           <span class="tag">Excel</span>
           <span class="tag">Database</span>
@@ -118,69 +128,98 @@
       </div>
     </div>
 
-    <!-- CARD 3 — placeholder slot -->
-    <div class="pcard" data-category="excel">
-      <div class="pcard-img" style="background: linear-gradient(135deg, #0a1020 0%, #131a35 40%, #060a15 100%);">
-        <span class="pcard-badge" style="background:rgba(100,100,150,0.2); border-color:rgba(150,150,200,0.3); color:#9090c0;">Slot</span>
-        <div class="banner-visual" style="align-items:center; justify-content:center; flex-direction:column; gap:0.5rem;">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(176,106,255,0.3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
+    <!-- CARD 3 -->
+    <div class="pcard" data-category="mysql">
+      <div class="pcard-img">
+        <span class="pcard-badge">Midterm</span>
+        <div class="banner-line">
+          <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="lg1" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#b06aff" stop-opacity="0.35"/>
+                <stop offset="100%" stop-color="#b06aff" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0 80 L25 65 L50 72 L75 45 L100 50 L125 30 L150 38 L175 20 L200 25 L200 100 L0 100 Z" fill="url(#lg1)"/>
+            <polyline points="0,80 25,65 50,72 75,45 100,50 125,30 150,38 175,20 200,25" fill="none" stroke="#b06aff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="75" cy="45" r="4" fill="#e879f9"/>
+            <circle cx="125" cy="30" r="4" fill="#e879f9"/>
+            <circle cx="175" cy="20" r="4" fill="#e879f9"/>
           </svg>
-          <span style="font-family:'Syne',sans-serif; font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:rgba(176,106,255,0.3);">Add task</span>
         </div>
       </div>
       <div class="pcard-body">
-        <div class="pcard-number">Task 03</div>
-        <div class="pcard-title" style="color:var(--muted);">Coming Soon</div>
-        <p class="pcard-desc">More midterm tasks will be added here.</p>
-        <div class="pcard-tags"><span class="tag" style="opacity:0.4;">TBA</span></div>
+        <div class="pcard-number">Practice Task 2</div>
+        <div class="pcard-title">MS Excel Functions</div>
+        <p class="pcard-desc">Applied essential Excel functions to manipulate and analyze data efficiently. This task covered commonly used formulas that streamline data processing and calculations.</p>
+        <div class="pcard-tags">
+          <span class="tag">Excel</span>
+          <span class="tag">Database</span>
+          <span class="tag">Data Cleaning</span>
+        </div>
         <div class="pcard-footer">
-          <button class="btn-view" style="opacity:0.35; cursor:not-allowed; background:rgba(176,106,255,0.15); box-shadow:none;">Coming Soon</button>
+          <button class="btn-view" onclick="openModal('modal3')">View Details</button>
+          <a class="icon-btn" title="GitHub" href="#">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+          <a class="icon-btn" title="Live" href="#">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
         </div>
       </div>
     </div>
 
+    <!-- CARD 4 -->
+    <div class="pcard" data-category="mysql">
+      <div class="pcard-img">
+        <span class="pcard-badge">Midterm</span>
+        <div class="banner-line">
+          <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="lg1" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#b06aff" stop-opacity="0.35"/>
+                <stop offset="100%" stop-color="#b06aff" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0 80 L25 65 L50 72 L75 45 L100 50 L125 30 L150 38 L175 20 L200 25 L200 100 L0 100 Z" fill="url(#lg1)"/>
+            <polyline points="0,80 25,65 50,72 75,45 100,50 125,30 150,38 175,20 200,25" fill="none" stroke="#b06aff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="75" cy="45" r="4" fill="#e879f9"/>
+            <circle cx="125" cy="30" r="4" fill="#e879f9"/>
+            <circle cx="175" cy="20" r="4" fill="#e879f9"/>
+          </svg>
+        </div>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-number">Practice Task 3</div>
+        <div class="pcard-title">Demo Creating Dashboards in Excel</div>
+        <p class="pcard-desc">Built an interactive dashboard in Excel to visualize key metrics and trends. This task focused on designing clear, user-friendly layouts that make data easy to explore at a glance.</p>
+        <div class="pcard-tags">
+          <span class="tag">Excel</span>
+          <span class="tag">Database</span>
+          <span class="tag">Data Cleaning</span>
+        </div>
+        <div class="pcard-footer">
+          <button class="btn-view" onclick="openModal('modal4')">View Details</button>
+          <a class="icon-btn" title="GitHub" href="#">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+          <a class="icon-btn" title="Live" href="#">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    
   </div>
 </section>
+
 
 <!-- MODAL 1 -->
 <div class="modal-overlay" id="modal1">
   <div class="modal">
-    <div class="modal-banner">
-      <button class="modal-close" onclick="closeModal('modal1')">✕</button>
-      <div style="flex:1; height:45%; background:rgba(176,106,255,0.5); border-radius:3px 3px 0 0;"></div>
-      <div style="flex:1; height:75%; background:rgba(176,106,255,0.75); border-radius:3px 3px 0 0;"></div>
-      <div style="flex:1; height:55%; background:rgba(176,106,255,0.55); border-radius:3px 3px 0 0;"></div>
-      <div style="flex:1; height:95%; background:var(--accent); border-radius:3px 3px 0 0;"></div>
-      <div style="flex:1; height:65%; background:rgba(176,106,255,0.65); border-radius:3px 3px 0 0;"></div>
-      <div style="flex:1; height:85%; background:rgba(232,121,249,0.75); border-radius:3px 3px 0 0;"></div>
-      <div style="flex:1; height:50%; background:rgba(176,106,255,0.5); border-radius:3px 3px 0 0;"></div>
-    </div>
-    <div class="modal-body">
-      <div class="modal-label">Midterm · Paired Task 1.</div>
-      <div class="modal-title"> Asking the Right Questions</div>
-      <p class="modal-desc">decription</p>
-      <div class="modal-tags">
-        <span class="tag">Presentation</span>
-        <span class="tag">Data Analysis</span>
-        <span class="tag">Visualization</span>
-      </div>
-      <div class="modal-actions">
-        <a href="#" class="btn-view" style="display:inline-flex; align-items:center; gap:0.4rem; flex:unset; padding:0.65rem 1.5rem;">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-          View on GitHub
-        </a>
-        <button class="btn-outline" onclick="closeModal('modal1')" style="padding:0.65rem 1.25rem; font-size:0.85rem;">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- MODAL 2 -->
-<div class="modal-overlay" id="modal2">
-  <div class="modal">
     <div class="modal-banner" style="padding:0; position:relative;">
-      <button class="modal-close" onclick="closeModal('modal2')">✕</button>
+      <button class="modal-close" onclick="closeModal('modal1')">✕</button>
       <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;" preserveAspectRatio="none">
         <defs>
           <linearGradient id="lg2" x1="0" y1="0" x2="0" y2="1">
@@ -196,30 +235,147 @@
       </svg>
     </div>
     <div class="modal-body">
-      <div class="modal-label">Midterm · Task 02</div>
-      <div class="modal-title">Database Activity</div>
-      <p class="modal-desc">A hands-on MySQL activity covering structured query language fundamentals — creating tables, inserting data, writing SELECT queries, and using JOINs to retrieve meaningful information from relational databases.</p>
+      <div class="modal-label">Paired Task 1</div>
+      <div class="modal-title">Asking the Right Questions</div>
+      <p class="modal-desc">.</p>
       <div class="modal-tags">
-        <span class="tag">MySQL</span>
-        <span class="tag">SQL</span>
+        <span class="tag">Excel</span>
         <span class="tag">Database</span>
-        <span class="tag">Queries</span>
+        <span class="tag">Data Cleaning</span>
       </div>
       <div class="modal-actions">
         <a href="#" class="btn-view" style="display:inline-flex; align-items:center; gap:0.4rem; flex:unset; padding:0.65rem 1.5rem;">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
           View on GitHub
         </a>
-        <button class="btn-outline" onclick="closeModal('modal2')" style="padding:0.65rem 1.25rem; font-size:0.85rem;">Close</button>
+        <button class="btn-outline" onclick="closeModal('modal1')" style="padding:0.65rem 1.25rem; font-size:0.85rem;">Close</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- FOOTER — matches portfolio.html -->
+<!-- MODAL 2 -->
+<div class="modal-overlay" id="modal2">
+    <div class="modal">
+      <div class="modal-banner" style="padding:0; position:relative;">
+        <button class="modal-close" onclick="closeModal('modal2')">✕</button>
+        <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="lg2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#b06aff" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#b06aff" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0 120 L40 95 L80 105 L120 65 L160 75 L200 45 L240 58 L300 30 L300 180 L0 180 Z" fill="url(#lg2)"/>
+          <polyline points="0,120 40,95 80,105 120,65 160,75 200,45 240,58 300,30" fill="none" stroke="#b06aff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="120" cy="65" r="5" fill="#e879f9"/>
+          <circle cx="200" cy="45" r="5" fill="#e879f9"/>
+          <circle cx="300" cy="30" r="5" fill="#e879f9"/>
+        </svg>
+      </div>
+      <div class="modal-body">
+        <div class="modal-label">Practice Task 1</div>
+        <div class="modal-title">Demo File for Data Preparation and Cleaning</div>
+        <p class="modal-desc">Cleaned and prepared a raw dataset by handling missing values, errors, and formatting issues. This task built foundational skills in making messy data analysis-ready.</p>
+        <div class="modal-tags">
+          <span class="tag">Excel</span>
+          <span class="tag">Database</span>
+          <span class="tag">Data Cleaning</span>
+        </div>
+        <div class="modal-actions">
+          <a href="#" class="btn-view" style="display:inline-flex; align-items:center; gap:0.4rem; flex:unset; padding:0.65rem 1.5rem;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            View on GitHub
+          </a>
+          <button class="btn-outline" onclick="closeModal('modal2')" style="padding:0.65rem 1.25rem; font-size:0.85rem;">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 3 -->
+<div class="modal-overlay" id="modal3">
+    <div class="modal">
+      <div class="modal-banner" style="padding:0; position:relative;">
+        <button class="modal-close" onclick="closeModal('modal3')">✕</button>
+        <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="lg2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#b06aff" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#b06aff" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0 120 L40 95 L80 105 L120 65 L160 75 L200 45 L240 58 L300 30 L300 180 L0 180 Z" fill="url(#lg2)"/>
+          <polyline points="0,120 40,95 80,105 120,65 160,75 200,45 240,58 300,30" fill="none" stroke="#b06aff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="120" cy="65" r="5" fill="#e879f9"/>
+          <circle cx="200" cy="45" r="5" fill="#e879f9"/>
+          <circle cx="300" cy="30" r="5" fill="#e879f9"/>
+        </svg>
+      </div>
+      <div class="modal-body">
+        <div class="modal-label">Practice Task 2</div>
+        <div class="modal-title">MS Excel Functions</div>
+        <p class="modal-desc">Applied essential Excel functions to manipulate and analyze data efficiently. This task covered commonly used formulas that streamline data processing and calculations.</p>
+        <div class="modal-tags">
+          <span class="tag">Excel</span>
+          <span class="tag">Database</span>
+          <span class="tag">Data Cleaning</span>
+        </div>
+        <div class="modal-actions">
+          <a href="#" class="btn-view" style="display:inline-flex; align-items:center; gap:0.4rem; flex:unset; padding:0.65rem 1.5rem;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            View on GitHub
+          </a>
+          <button class="btn-outline" onclick="closeModal('modal3')" style="padding:0.65rem 1.25rem; font-size:0.85rem;">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 4 -->
+<div class="modal-overlay" id="modal4">
+    <div class="modal">
+      <div class="modal-banner" style="padding:0; position:relative;">
+        <button class="modal-close" onclick="closeModal('modal4')">✕</button>
+        <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="lg2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#b06aff" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#b06aff" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0 120 L40 95 L80 105 L120 65 L160 75 L200 45 L240 58 L300 30 L300 180 L0 180 Z" fill="url(#lg2)"/>
+          <polyline points="0,120 40,95 80,105 120,65 160,75 200,45 240,58 300,30" fill="none" stroke="#b06aff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="120" cy="65" r="5" fill="#e879f9"/>
+          <circle cx="200" cy="45" r="5" fill="#e879f9"/>
+          <circle cx="300" cy="30" r="5" fill="#e879f9"/>
+        </svg>
+      </div>
+      <div class="modal-body">
+        <div class="modal-label">Practice Task 3</div>
+        <div class="modal-title">Demo Creating Dashboards in Excel</div>
+        <p class="modal-desc">Built an interactive dashboard in Excel to visualize key metrics and trends. This task focused on designing clear, user-friendly layouts that make data easy to explore at a glance.</p>
+        <div class="modal-tags">
+          <span class="tag">Excel</span>
+          <span class="tag">Database</span>
+          <span class="tag">Data Cleaning</span>
+        </div>
+        <div class="modal-actions">
+          <a href="#" class="btn-view" style="display:inline-flex; align-items:center; gap:0.4rem; flex:unset; padding:0.65rem 1.5rem;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            View on GitHub
+          </a>
+          <button class="btn-outline" onclick="closeModal('modal4')" style="padding:0.65rem 1.25rem; font-size:0.85rem;">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- FOOTER -->
 <footer style="position:relative; z-index:1;">
   <div class="footer-logo">hmcdefg</div>
-  <div class="footer-text">© 2026 Hershey Marie C. Gallardo. All rights reserved.</div>
+  <div class="footer-text">©2026 Hershey Marie C. Gallardo. All rights reserved.</div>
 </footer>
 
 <script>
