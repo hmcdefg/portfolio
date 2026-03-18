@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Midterms — Practice Task</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ── Card banner image ── */
+  .pcard-img {
+    position: relative;
+    overflow: hidden;
+    height: 140px;
+    background: #0d0d14;
+  }
+  .pcard-img img.banner-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.55;
+    display: block;
+    transition: opacity 0.3s ease, transform 0.4s ease;
+  }
+  .pcard:hover .pcard-img img.banner-photo {
+    opacity: 0.7;
+    transform: scale(1.04);
+  }
+  /* fallback SVG sits behind if no image */
+  .pcard-img .banner-line {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .pcard-img img.banner-photo ~ .banner-line {
+    display: none;
+  }
+  .pcard-img .pcard-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+  }
+
+  /* ── Modal banner image ── */
+  .modal-banner {
+    height: 180px;
+    overflow: hidden;
+    background: #0d0d14;
+    border-radius: 16px 16px 0 0;
+  }
+  .modal-banner img.modal-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.55;
+    display: block;
+  }
+  .modal-banner img.modal-photo ~ svg {
+    display: none;
+  }
+  .modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 10;
+  }
+
+  /* ── File download button ── */
+  .btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.65rem 1.25rem;
+    font-size: 0.85rem;
+    font-family: inherit;
+    font-weight: 500;
+    border-radius: 8px;
+    border: 1.5px solid rgba(176,106,255,0.35);
+    background: rgba(176,106,255,0.08);
+    color: #b06aff;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .btn-download:hover {
+    background: rgba(176,106,255,0.16);
+    border-color: rgba(176,106,255,0.6);
+  }
+  .btn-download svg {
+    flex-shrink: 0;
+  }
+
+  /* ── Image gallery in modal ── */
+  .modal-gallery {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 0.75rem 0;
+  }
+  .modal-gallery img {
+    height: 80px;
+    width: auto;
+    border-radius: 6px;
+    object-fit: cover;
+    border: 1px solid rgba(176,106,255,0.2);
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .modal-gallery img:hover { opacity: 0.8; }
+
+  /* placeholder styling */
+  .img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: rgba(176,106,255,0.4);
+    font-size: 0.75rem;
+    font-family: 'DM Sans', sans-serif;
+    background: repeating-linear-gradient(
+      45deg,
+      rgba(176,106,255,0.03),
+      rgba(176,106,255,0.03) 10px,
+      transparent 10px,
+      transparent 20px
+    );
+  }
+  .img-placeholder svg { opacity: 0.35; }
+</style>
+</head>
+<body>
+
+<div class="blob1"></div>
+<div class="blob2"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">shey</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#projects" class="active">Projects</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="projects-hero">
+  <div class="page-tabs">
+    <a href="practice.html" class="page-tab active">Practice Task</a>
+    <a href="project.html" class="page-tab">Project Task</a>
+  </div>
+  <div class="projects-hero-tag">MIDTERMS</div>
+  <h1>Practice <span style="background:linear-gradient(135deg,var(--accent),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Tasks</span></h1>
+  <p>Tasks and activities completed for the midterm, exploring data analysis and visualization with Excel and MySQL.</p>
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="excel">Excel</button>
+    <button class="filter-btn" data-filter="mysql">MySQL</button>
+    <button class="filter-btn" data-filter="viz">Visualization</button>
+  </div>
+</div>
+
+<div class="section-divider" style="max-width:1200px; margin: 0 auto;"></div>
+
+<!-- PROJECTS GRID -->
+<section class="projects-page-section">
+  <div class="projects-page-grid" id="projectsGrid">
+
+    <!-- CARD 1 — Paired Task 1 -->
+    <div class="pcard" data-category="viz">
+      <div class="pcard-img">
+        <span class="pcard-badge">Midterm</span>
+        <img class="banner-photo" src="images/pairedtask1.png" alt="Asking the Right Questions">
+        <div class="banner-line">
+          <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="card-lg1" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#b06aff" stop-opacity="0.35"/>
+                <stop offset="100%" stop-color="#b06aff" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0 80 L25 65 L50 72 L75 45 L100 50 L125 30 L150 38 L175 20 L200 25 L200 100 L0 100 Z" fill="url(#card-lg1)"/>
+            <polyline points="0,80 25,65 50,72 75,45 100,50 125,30 150,38 175,20 200,25" fill="none" stroke="#b06aff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="75" cy="45" r="4" fill="#e879f9"/>
+            <circle cx="125" cy="30" r="4" fill="#e879f9"/>
+            <circle cx="175" cy="20" r="4" fill="#e879f9"/>
+          </svg>
+        </div>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-number">Paired Task 1</div>
+        <div class="pcard-title">Asking the Right Questions</div>
+        <p class="pcard-desc">A presentation exploring how to frame meaningful questions before diving into data analysis — the foundation of any good data-driven investigation.</p>
+        <div class="pcard-tags">
+          <span class="tag">Presentation</span>
+          <span class="tag">Data Analysis</span>
+          <span class="tag">Visualization</span>
+        </div>
+        <div class="pcard-footer">
+          <button class="btn-view" onclick="openModal('modal1')">View Details</button>
+          <a class="icon-btn" title="GitHub" href="#">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+          <a class="icon-btn" title="Live" href="#">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2 — Practice Task 1 -->
+    <div class="pcard" data-category="excel">
+      <div class="pcard-img">
+        <span class="pcard-badge">Midterm</span>
+        <img class="banner-photo" src="images/practicetask1.png" alt="Data Preparation and Cleaning">
+        <div class="banner-line">
+          <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="card-lg2" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#b06aff" stop-opacity="0.35"/>
+                <stop offset="100%" stop-color="#b06aff" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0 80 L25 65 L50 72 L75 45 L100 50 L125 30 L150 38 L175 20 L200 25 L200 100 L0 100 Z" fill="url(#card-lg2)"/>
+            <polyline points="0,80 25,65 50,72 75,45 100,50 125,30 150,38 175,20 200,25" fill="none" stroke="#b06aff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="75" cy="45" r="4" fill="#e879f9"/>
+            <circle cx="125" cy="30" r="4" fill="#e879f9"/>
+            <circle cx="175" cy="20" r="4" fill="#e879f9"/>
+          </svg>
+        </div>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-number">Practice Task 1</div>
+        <div class="pcard-title">Demo File for Data Preparation and Cleaning</div>
+        <p class="pcard-desc">Cleaned and prepared a raw dataset by handling missing values, errors, and formatting issues. This task built foundational skills in making messy data analysis-ready.</p>
+        <div class="pcard-tags">
+          <span class="tag">Excel</span>
+          <span class="tag">Data Cleaning</span>
+        </div>
+        <div class="pcard-footer">
+          <button class="btn-view" onclick="openModal('modal2')">View Details</button>
+          <a class="icon-btn" title="GitHub" href="#">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+          <a class="icon-btn" title="Live" href="#">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3 — Practice Task 2 -->
+    <div class="pcard" data-category="excel">
+      <div class="pcard-img">
+        <span class="pcard-badge">Midterm</span>
+        <img class="banner-photo" src="images/practicetask2.png" alt="MS Excel Functions">
+        <div class="banner-line">
+          <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="card-lg3" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#b06aff" stop-opacity="0.35"/>
+                <stop offset="100%" stop-color="#b06aff" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0 80 L25 65 L50 72 L75 45 L100 50 L125 30 L150 38 L175 20 L200 25 L200 100 L0 100 Z" fill="url(#card-lg3)"/>
+            <polyline points="0,80 25,65 50,72 75,45 100,50 125,30 150,38 175,20 200,25" fill="none" stroke="#b06aff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="75" cy="45" r="4" fill="#e879f9"/>
+            <circle cx="125" cy="30" r="4" fill="#e879f9"/>
+            <circle cx="175" cy="20" r="4" fill="#e879f9"/>
+          </svg>
+        </div>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-number">Practice Task 2</div>
+        <div class="pcard-title">MS Excel Functions</div>
+        <p class="pcard-desc">Applied essential Excel functions to manipulate and analyze data efficiently. This task covered commonly used formulas that streamline data processing and calculations.</p>
+        <div class="pcard-tags">
+          <span class="tag">Excel</span>
+          <span class="tag">Data Cleaning</span>
+        </div>
+        <div class="pcard-footer">
+          <button class="btn-view" onclick="openModal('modal3')">View Details</button>
+          <a class="icon-btn" title="GitHub" href="#">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+          <a class="icon-btn" title="Live" href="#">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 4 — Practice Task 3 -->
+    <div class="pcard" data-category="excel viz">
+      <div class="pcard-img">
+        <span class="pcard-badge">Midterm</span>
+        <img class="banner-photo" src="images/practicetask3.png" alt="Creating Dashboards in Excel">
+        <div class="banner-line">
+          <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="card-lg4" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#b06aff" stop-opacity="0.35"/>
+                <stop offset="100%" stop-color="#b06aff" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0 80 L25 65 L50 72 L75 45 L100 50 L125 30 L150 38 L175 20 L200 25 L200 100 L0 100 Z" fill="url(#card-lg4)"/>
+            <polyline points="0,80 25,65 50,72 75,45 100,50 125,30 150,38 175,20 200,25" fill="none" stroke="#b06aff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="75" cy="45" r="4" fill="#e879f9"/>
+            <circle cx="125" cy="30" r="4" fill="#e879f9"/>
+            <circle cx="175" cy="20" r="4" fill="#e879f9"/>
+          </svg>
+        </div>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-number">Practice Task 3</div>
+        <div class="pcard-title">Demo Creating Dashboards in Excel</div>
+        <p class="pcard-desc">Built an interactive dashboard in Excel to visualize key metrics and trends. This task focused on designing clear, user-friendly layouts that make data easy to explore at a glance.</p>
+        <div class="pcard-tags">
+          <span class="tag">Excel</span>
+          <span class="tag">Visualization</span>
+          <span class="tag">Dashboard</span>
+        </div>
+        <div class="pcard-footer">
+          <button class="btn-view" onclick="openModal('modal4')">View Details</button>
+          <a class="icon-btn" title="GitHub" href="#">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+          <a class="icon-btn" title="Live" href="#">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     MODAL 1 — Paired Task 1
+     ══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modal1">
+  <div class="modal">
+    <div class="modal-banner" style="padding:0; position:relative;">
+      <button class="modal-close" onclick="closeModal('modal1')">✕</button>
+      <img class="modal-photo" src="images/pairedtask1.png" alt="Asking the Right Questions">
+      <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="modal-lg1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#b06aff" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="#b06aff" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <path d="M0 120 L40 95 L80 105 L120 65 L160 75 L200 45 L240 58 L300 30 L300 180 L0 180 Z" fill="url(#modal-lg1)"/>
+        <polyline points="0,120 40,95 80,105 120,65 160,75 200,45 240,58 300,30" fill="none" stroke="#b06aff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="120" cy="65" r="5" fill="#e879f9"/>
+        <circle cx="200" cy="45" r="5" fill="#e879f9"/>
+        <circle cx="300" cy="30" r="5" fill="#e879f9"/>
+      </svg>
+    </div>
+    <div class="modal-body">
+      <div class="modal-label">Paired Task 1</div>
+      <div class="modal-title">Asking the Right Questions</div>
+      <p class="modal-desc">A presentation exploring how to frame meaningful questions before diving into data analysis — the foundation of any good data-driven investigation.</p>
+      <!--
+        TO ADD EXTRA SCREENSHOTS: uncomment and fill in below:
+        <div class="modal-gallery">
+          <img src="images/paired-task-1-a.jpg" alt="Screenshot 1">
+          <img src="images/paired-task-1-b.jpg" alt="Screenshot 2">
+        </div>
+      -->
+      <div class="modal-tags">
+        <span class="tag">Presentation</span>
+        <span class="tag">Data Analysis</span>
+        <span class="tag">Visualization</span>
+      </div>
+      <div class="modal-actions">
+        <a href="#" class="btn-view" style="display:inline-flex; align-items:center; gap:0.4rem; flex:unset; padding:0.65rem 1.5rem;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          View on GitHub
+        </a>
+        <!--
+          TO ADD FILE DOWNLOAD: replace href="#" with your file path, e.g. href="files/paired-task-1.pptx"
+          Change the label and icon to match the file type.
+        -->
+        <a href="#" class="btn-download" download>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download File
+        </a>
+        <button class="btn-outline" onclick="closeModal('modal1')" style="padding:0.65rem 1.25rem; font-size:0.85rem;">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     MODAL 2 — Practice Task 1
+     ══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modal2">
+  <div class="modal">
+    <div class="modal-banner" style="padding:0; position:relative;">
+      <button class="modal-close" onclick="closeModal('modal2')">✕</button>
+      <img class="modal-photo" src="images/practicetask1.png" alt="Data Preparation and Cleaning">
+      <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="modal-lg2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#b06aff" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="#b06aff" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <path d="M0 120 L40 95 L80 105 L120 65 L160 75 L200 45 L240 58 L300 30 L300 180 L0 180 Z" fill="url(#modal-lg2)"/>
+        <polyline points="0,120 40,95 80,105 120,65 160,75 200,45 240,58 300,30" fill="none" stroke="#b06aff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="120" cy="65" r="5" fill="#e879f9"/>
+        <circle cx="200" cy="45" r="5" fill="#e879f9"/>
+        <circle cx="300" cy="30" r="5" fill="#e879f9"/>
+      </svg>
+    </div>
+    <div class="modal-body">
+      <div class="modal-label">Practice Task 1</div>
+      <div class="modal-title">Demo File for Data Preparation and Cleaning</div>
+      <p class="modal-desc">Cleaned and prepared a raw dataset by handling missing values, errors, and formatting issues. This task built foundational skills in making messy data analysis-ready.</p>
+      <!--
+        TO ADD EXTRA SCREENSHOTS: uncomment and fill in below:
+        <div class="modal-gallery">
+          <img src="images/practice-task-1-a.jpg" alt="Screenshot 1">
+          <img src="images/practice-task-1-b.jpg" alt="Screenshot 2">
+        </div>
+      -->
+      <div class="modal-tags">
+        <span class="tag">Excel</span>
+        <span class="tag">Data Cleaning</span>
+      </div>
+      <div class="modal-actions">
+        <a href="#" class="btn-view" style="display:inline-flex; align-items:center; gap:0.4rem; flex:unset; padding:0.65rem 1.5rem;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          View on GitHub
+        </a>
+        <!--
+          TO ADD FILE DOWNLOAD: replace href="#" with your file path, e.g. href="files/practice-task-1.xlsx"
+        -->
+        <a href="#" class="btn-download" download>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Excel
+        </a>
+        <button class="btn-outline" onclick="closeModal('modal2')" style="padding:0.65rem 1.25rem; font-size:0.85rem;">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     MODAL 3 — Practice Task 2
+     ══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modal3">
+  <div class="modal">
+    <div class="modal-banner" style="padding:0; position:relative;">
+      <button class="modal-close" onclick="closeModal('modal3')">✕</button>
+      <img class="modal-photo" src="images/practicetask2.png" alt="MS Excel Functions">
+      <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="modal-lg3" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#b06aff" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="#b06aff" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <path d="M0 120 L40 95 L80 105 L120 65 L160 75 L200 45 L240 58 L300 30 L300 180 L0 180 Z" fill="url(#modal-lg3)"/>
+        <polyline points="0,120 40,95 80,105 120,65 160,75 200,45 240,58 300,30" fill="none" stroke="#b06aff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="120" cy="65" r="5" fill="#e879f9"/>
+        <circle cx="200" cy="45" r="5" fill="#e879f9"/>
+        <circle cx="300" cy="30" r="5" fill="#e879f9"/>
+      </svg>
+    </div>
+    <div class="modal-body">
+      <div class="modal-label">Practice Task 2</div>
+      <div class="modal-title">MS Excel Functions</div>
+      <p class="modal-desc">Applied essential Excel functions to manipulate and analyze data efficiently. This task covered commonly used formulas that streamline data processing and calculations.</p>
+      <!--
+        TO ADD EXTRA SCREENSHOTS: uncomment and fill in below:
+        <div class="modal-gallery">
+          <img src="images/practice-task-2-a.jpg" alt="Screenshot 1">
+        </div>
+      -->
+      <div class="modal-tags">
+        <span class="tag">Excel</span>
+        <span class="tag">Data Cleaning</span>
+      </div>
+      <div class="modal-actions">
+        <a href="#" class="btn-view" style="display:inline-flex; align-items:center; gap:0.4rem; flex:unset; padding:0.65rem 1.5rem;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          View on GitHub
+        </a>
+        <!--
+          TO ADD FILE DOWNLOAD: replace href="#" with your file path, e.g. href="files/practice-task-2.xlsx"
+        -->
+        <a href="#" class="btn-download" download>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Excel
+        </a>
+        <button class="btn-outline" onclick="closeModal('modal3')" style="padding:0.65rem 1.25rem; font-size:0.85rem;">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     MODAL 4 — Practice Task 3
+     ══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modal4">
+  <div class="modal">
+    <div class="modal-banner" style="padding:0; position:relative;">
+      <button class="modal-close" onclick="closeModal('modal4')">✕</button>
+      <img class="modal-photo" src="images/practicetask3.png" alt="Creating Dashboards in Excel">
+      <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="modal-lg4" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#b06aff" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="#b06aff" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <path d="M0 120 L40 95 L80 105 L120 65 L160 75 L200 45 L240 58 L300 30 L300 180 L0 180 Z" fill="url(#modal-lg4)"/>
+        <polyline points="0,120 40,95 80,105 120,65 160,75 200,45 240,58 300,30" fill="none" stroke="#b06aff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="120" cy="65" r="5" fill="#e879f9"/>
+        <circle cx="200" cy="45" r="5" fill="#e879f9"/>
+        <circle cx="300" cy="30" r="5" fill="#e879f9"/>
+      </svg>
+    </div>
+    <div class="modal-body">
+      <div class="modal-label">Practice Task 3</div>
+      <div class="modal-title">Demo Creating Dashboards in Excel</div>
+      <p class="modal-desc">Built an interactive dashboard in Excel to visualize key metrics and trends. This task focused on designing clear, user-friendly layouts that make data easy to explore at a glance.</p>
+      <!--
+        TO ADD EXTRA SCREENSHOTS: uncomment and fill in below:
+        <div class="modal-gallery">
+          <img src="images/practice-task-3-a.jpg" alt="Dashboard screenshot">
+        </div>
+      -->
+      <div class="modal-tags">
+        <span class="tag">Excel</span>
+        <span class="tag">Visualization</span>
+        <span class="tag">Dashboard</span>
+      </div>
+      <div class="modal-actions">
+        <a href="#" class="btn-view" style="display:inline-flex; align-items:center; gap:0.4rem; flex:unset; padding:0.65rem 1.5rem;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          View on GitHub
+        </a>
+        <!--
+          TO ADD FILE DOWNLOAD: replace href="#" with your file path, e.g. href="files/practice-task-3.xlsx"
+        -->
+        <a href="#" class="btn-download" download>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Excel
+        </a>
+        <button class="btn-outline" onclick="closeModal('modal4')" style="padding:0.65rem 1.25rem; font-size:0.85rem;">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- FOOTER -->
+<footer style="position:relative; z-index:1;">
+  <div class="footer-logo">hmcg</div>
+  <div class="footer-text">©2026 Hershey Marie C. Gallardo. All rights reserved.</div>
+</footer>
+
+<script>
+  // Filter
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.pcard').forEach(card => {
+        const cats = card.dataset.category || '';
+        card.style.display = (filter === 'all' || cats.includes(filter)) ? '' : 'none';
+      });
+    });
+  });
+
+  // Modal
+  function openModal(id) {
+    document.getElementById(id).classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(id) {
+    document.getElementById(id).classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('.modal-overlay').forEach(o => {
+    o.addEventListener('click', e => { if (e.target === o) closeModal(o.id); });
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.open').forEach(m => closeModal(m.id));
+  });
+</script>
+</body>
+</html>
