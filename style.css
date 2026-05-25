@@ -1,7 +1,3 @@
-/* ============================================
-   HERSHEY MARIE C. GALLARDO — PORTFOLIO CSS
-   ============================================ */
-
 /* CSS VARIABLES */
 :root {
     --bg: #0a0a0f;
@@ -129,7 +125,7 @@
   
   .nav-links a:hover { color: var(--text); }
   .nav-links a.active { color: var(--accent); }
-  
+
   /* ============================================
      SECTIONS
      ============================================ */
@@ -1205,3 +1201,4 @@
   @media (max-width: 580px) {
     .projects-page-grid { grid-template-columns: 1fr; }
   }
+
